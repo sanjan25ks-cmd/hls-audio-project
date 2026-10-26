@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Audio Streaming - HLS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 Cloud Audio Streaming</h1>
+    <p class="sub">HLS Segmenter Pipeline</p>
+
+    <div class="card">
+      <h2>1. Upload a song</h2>
+      <input type="file" id="audioFile" accept="audio/*">
+      <label>Segment length:
+        <select id="segTime">
+          <option value="5">5 sec</option>
+          <option value="10" selected>10 sec</option>
+          <option value="20">20 sec</option>
+        </select>
+      </label>
+      <button id="uploadBtn">Upload &amp; Segment</button>
+      <p id="status"></p>
+    </div>
+
+    <div class="card">
+      <h2>2. Stream</h2>
+      <p id="nowPlaying">Select a track from the library</p>
+      <audio id="player" controls></audio>
+      <h3>Segments being loaded live</h3>
+      <ul id="segLog"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Library</h2>
+      <ul id="library"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
